@@ -1,0 +1,35 @@
+# Build output #
+################
+js/templates.js
+publish/
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+
+# Icon must end with two \r #
+Icon
+
+
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# JSDoc #
+#########
+docs/
+
+# Design directory #
+####################
+design/
+
+# node.js modules #
+###################
+node_modules/
+
+# Bower components #
+####################
+bower_components/

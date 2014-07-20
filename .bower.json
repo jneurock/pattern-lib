@@ -1,0 +1,6 @@
+{
+  "name": "pattern-lib",
+  "dependencies": {
+    "viking-base": "3.1.0"
+  }
+}
