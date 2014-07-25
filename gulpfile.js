@@ -12,5 +12,10 @@ var gulp = require('gulp'),
 vb.gulp = gulp;
 vb.plugins = plugins;
 
+vb.tasks.build.depends = [
+  'handlebars',
+  'root'
+];
+
 // Modify tasks as you need before calling vb.registerGulpTasks
 vb.registerGulpTasks();
