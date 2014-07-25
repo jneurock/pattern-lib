@@ -1,3 +1,19 @@
+Ember.Route.reopen({
+  beforeModel: function(transition) {
+
+    if (transition) {
+
+      transition.then(function() {
+
+        Ember.run.scheduleOnce('afterRender', this, function() {
+
+          $(document).foundation();
+        });
+      });
+    }
+  }
+});
+
 App = Ember.Application.create();
 
 // Add routes here
