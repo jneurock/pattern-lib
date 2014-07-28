@@ -26,12 +26,21 @@ vb.sources.posts = 'posts/**/*.md';
 
 // Task updates
 vb.tasks.build.depends = [
+  'css',
   'fonts',
   'handlebars',
   'img',
-  // 'posts',
+  'posts',
   'root'
 ];
+
+vb.tasks.css = {
+  cb: function() {
+
+    return gulp.src( this.sources.css )
+      .pipe( gulp.dest( this.output.publish + this.output.css ) );
+  }
+};
 
 vb.tasks.fonts = {
   cb: function() {
@@ -48,6 +57,28 @@ vb.tasks.img = {
 
     return gulp.src( this.sources.img )
       .pipe( gulp.dest( this.output.publish + this.output.img ) );
+  }
+};
+
+vb.tasks.posts = {
+  cb: function() {
+
+    var concatOpts = {
+          newLine: ','
+        },
+        vbOpts = {
+          highlightSyntax: true
+        },
+        vbConcatOpts = {
+          concat: true
+        };
+
+    return gulp.src( this.sources.posts )
+      .pipe( plugins.vikingPosts( vbOpts ) )
+      .pipe( gulp.dest( this.output.publish + this.output.post ) )
+      .pipe( plugins.concat( this.output.posts, concatOpts ) )
+      .pipe( plugins.vikingPosts( vbConcatOpts ) )
+      .pipe( gulp.dest( this.output.publish + this.output.post ) );
   }
 };
 

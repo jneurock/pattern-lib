@@ -1,4 +1,5 @@
 @import
+  "base/settings",
   "../bower_components/foundation/scss/normalize.scss",
   "../bower_components/foundation/scss/foundation/components/grid",
   "../bower_components/foundation/scss/foundation/components/accordion",
@@ -34,7 +35,7 @@
   "../bower_components/foundation/scss/foundation/components/top-bar",
   "../bower_components/foundation/scss/foundation/components/type",
   "../bower_components/foundation/scss/foundation/components/offcanvas",
-  "../bower_components/foundation/scss/foundation/components/visibility";
-
-// Optional IE 8 Grid Styles
-// @import url("../bower_components/viking-base/css/foundation-ie8/ie8-grid-foundation-4.css");
+  "../bower_components/foundation/scss/foundation/components/visibility",
+  "base/utility",
+  "modules/code",
+  "themes/github";

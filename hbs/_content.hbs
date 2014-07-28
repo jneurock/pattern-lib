@@ -1,0 +1,17 @@
+<p>
+  <a {{action "toggleContent"}}>
+    {{#unless App.hideContent}}
+      Hide content <span class="mono">&and;</span>
+    {{else}}
+      Show content <span class="mono">&or;</span>
+    {{/unless}}
+  </a>
+</p>
+
+{{#unless App.hideContent}}
+  <section class="row">
+    <div class="columns">
+      {{{content}}}
+    </div>
+  </section>
+{{/unless}}
