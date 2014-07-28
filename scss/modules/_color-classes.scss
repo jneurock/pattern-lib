@@ -1,0 +1,131 @@
+$color-names: "primary", "success", "alert", "warning", "secondary", "disabled-color";
+$selector: ();
+
+@each $color in $color-names {
+    .post-type-#{$color} .post-icon{
+        background: $color;
+    }
+	.color-swatch.bg-color.#{color} code:after {
+	    content: "#{$color}";
+	}
+}
+
+/* These are sort of generic 'utility' classes */
+
+.success {
+	color: $success-color;
+	&:hover {
+		color: adjust-color($success-color, $lightness: 10%, $saturation: 20%);
+	}
+}
+.alert {
+	color: $alert-color;
+	&:hover {
+		color: adjust-color($alert-color, $lightness: -10%, $saturation: 10%);
+	}
+}
+.warning {
+	color: $warning-color;
+	&:hover {
+		color: adjust-color($warning-color, $lightness: -10%, $saturation: 10%);
+	}
+}
+.secondary{
+	color: $secondary-color;
+	&:hover {
+		color: adjust-color($secondary-color, $lightness: -10%, $saturation: -10%);
+	}
+}
+.disabled-color{
+	color: adjust-color($gray-mid, $lightness: -20%, $saturation: -20%);
+	&:hover {
+		color: adjust-color($gray-mid, $lightness: -40%, $saturation: -10%);
+	}
+}
+.icon {
+	&.success {
+		color: $success-color !important;
+	}
+	&.alert {
+		color: $alert-color !important;
+		&:hover {
+			color: adjust-color($alert-color, $lightness: -10%, $saturation: 10%);
+		}
+	}
+	&.warning {
+		color: $warning-color !important;
+		&:hover {
+			color: adjust-color($warning-color, $lightness: -10%, $saturation: 10%);
+		}
+	}
+	&.secondary{
+		color: $secondary-color !important;
+		&:hover {
+			color: adjust-color($secondary-color, $lightness: -10%, $saturation: -10%);
+		}
+	}
+	&.disabled-color{
+		color: adjust-color($gray-mid, $lightness: -20%, $saturation: -20%) !important;
+		&:hover {
+			color: adjust-color($gray-mid, $lightness: -40%, $saturation: -10%);
+		}
+	}
+}
+.bg-color {
+	color: white !important;
+	&.primary {
+		background-color: $primary-color;
+		&:hover {
+			background-color: adjust-color($primary-color, $lightness: 10%, $saturation: 20%);
+		}
+	}
+	&.success {
+		background-color: $success-color;
+		&:hover {
+			background-color: adjust-color($success-color, $lightness: 10%, $saturation: 20%);
+		}
+	}
+	&.alert {
+		background-color: adjust-color($alert-color, $lightness: -5%, $saturation: -10%);
+		&:hover {
+			background-color: adjust-color($alert-color, $lightness: 10%, $saturation: 10%);
+		}
+	}
+	&.warning {
+		background-color: $warning-color;
+		&:hover {
+			background-color: adjust-color($warning-color, $lightness: -10%, $saturation: 10%);
+		}
+	}
+	&.secondary{
+		background-color: $secondary-color;
+		&:hover {
+			background-color: adjust-color($secondary-color, $lightness: -10%, $saturation: -10%);
+		}
+	}
+	&.disabled-color{
+		background-color: adjust-color($gray-mid, $lightness: -20%, $saturation: -20%);
+		&:hover {
+			background-color: adjust-color($gray-mid, $lightness: -40%, $saturation: -10%);
+		}
+	}
+}
+/* Here's some other generic color classes and conditions */
+
+.container-dark {
+	label {
+		color: white;
+	}
+}
+// because sometimes I need an element *there* (taking up space) but not *visible* (and display: none removes it entirely)
+.invisible {
+	visibility: hidden;
+}
+
+
+/* and here's some contextual classes */
+// this is for map pins - setting their color based on their "type" (primary/affiliated)
+// .icon.location.location-primary {
+
+// }
+

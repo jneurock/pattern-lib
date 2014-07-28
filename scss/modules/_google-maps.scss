@@ -1,0 +1,45 @@
+.google-maps {
+    position: relative;
+    padding-bottom: 75%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+/* this just formats the container - kind of a placeholder for now */
+.map-medium {
+    margin-top: rem-calc(20);
+    margin-bottom: rem-calc(20);
+}
+#map-large {
+    background: {
+        image: url('../img/content/map-comp-ultrawide.jpg');
+        repeat: no-repeat;
+        size: 100% 100%;
+    }
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: rem-calc(200);
+    padding: $rem-base * 0.8;
+    margin-bottom: $rem-base * 1.5;
+    font-weight: bold;
+    overflow: hidden;
+    border-bottom-left-radius: $global-radius;
+    border-bottom-right-radius: $global-radius;
+}
+
+.map-pin {
+    height: 21px;
+    width: 16px;
+}
+img.map-pin.icon-li {
+    left: -0.8rem;
+    top: 0.3rem;
+}

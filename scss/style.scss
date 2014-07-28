@@ -1,4 +1,10 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
 @import
+  "fonts/proxima",
+  "fonts/sparqons",
+  "base/settings",
   "../bower_components/foundation/scss/normalize.scss",
   "../bower_components/foundation/scss/foundation/components/grid",
   "../bower_components/foundation/scss/foundation/components/accordion",
@@ -34,7 +40,23 @@
   "../bower_components/foundation/scss/foundation/components/top-bar",
   "../bower_components/foundation/scss/foundation/components/type",
   "../bower_components/foundation/scss/foundation/components/offcanvas",
-  "../bower_components/foundation/scss/foundation/components/visibility";
+  "../bower_components/foundation/scss/foundation/components/visibility",
+  "modules/mixins",
+  "modules/color-classes",
+  "modules/typography",
+  "base/global",
+  "modules/ui",
+  "modules/navigation",
+  "modules/profile",
+  "modules/searchbox",
+  "modules/card-result",
+  "modules/price",
+  "modules/footer",
+  "modules/offcanvas",
+  "modules/quality",
+  "modules/google-maps",
+  "modules/content-page",
+  "modules/reviews";
 
 // Optional IE 8 Grid Styles
 // @import url("../bower_components/viking-base/css/foundation-ie8/ie8-grid-foundation-4.css");

@@ -1,0 +1,57 @@
+//     E    x     t    e    n     d    s
+@mixin spaced-out {
+	text-transform: uppercase;
+	letter-spacing: 0.15em;
+}
+@mixin border-subtle {
+	border-bottom: 1px solid $gray-pale;
+	border-right: 1px solid $gray-pale;
+}
+@mixin xtrapad {
+	@media #{$large-up} {
+		padding: rem-calc(5) rem-calc(20);
+	}
+}
+@mixin group-box {
+	margin-bottom: rem-calc(40);
+}
+@mixin text-shadow-size($size, $color){
+	@if $size == big {
+		text-shadow: 3px 3px 8px $color;
+	}
+	@if $size == small {
+		text-shadow: 2px 2px 4px $color;
+	}
+}
+
+@function black($opacity){
+    @return rgba(0,0,0,$opacity);
+}
+
+@function white($opacity){
+    @return rgba(255,255,255,$opacity);
+}
+
+// this mixin is for panels, whatever needs to be a solid color with inverted elements inside.
+@mixin autocolor($bg-color){
+	$bg-lightness: lightness($bg-color);
+	background-color: $bg-color;
+	@if $bg-lightness >= 50% { // if it's bright, make dark text
+		h1,h2,h3,h4,h5,h6,p,li,label { color: $body-font-color; }
+		a:not(.button) {
+			color: adjust-color($bg-color, $lightness: -50%, $saturation: 10%);
+		}
+		a:hover {
+			color: adjust-color($bg-color, $lightness: -30%, $saturation: 20%);
+		}
+	}
+	@else { // it's dark, make light stuff inside
+		h1,h2,h3,h4,h5,h6,p,li,label { color: $page-color; }
+		a:not(.button) {
+			color: adjust-color($bg-color, $lightness: 40%, $saturation: 40%);
+		}
+		a:hover:not(.button) {
+			color: $body-bg;
+		}
+	}
+}

@@ -1,0 +1,92 @@
+button, .button {
+	&.tiny, &.small{
+		font-weight: $font-weight-bold;
+	}
+}
+.button {
+	// font: {
+	// 	weight: bold;
+	// 	// family: $font-stack-sans;
+	// }
+	.icon {
+		padding-left: 0;
+		padding-right: 5px;
+	}
+	@media #{$small-only}  { // at small viewport widths, it gets kinda cramped...
+		padding-left: rem-calc(5);
+		padding-right: rem-calc(5);
+		width: 100%;
+	}
+	&.success { // The start of some work to auto-switch the text color if the button color is really light/bright. How could this be a function?
+		$button-lightness: lightness($success-color);
+		@if $button-lightness >= 50%  { color: $button-font-color-alt; }
+		@else  { color: $button-font-color; }
+	}
+	&.bright {
+		color: $button-font-color-alt;
+		background-color: $success-color-alt;
+		// &:hover {
+		// 	background-color: lighten($success-color-alt, 20%);
+		// }
+	}
+	&.secondary {
+		color: $text-color;
+		background-color: $secondary-color;
+		&:hover {
+			background-color: darken($secondary-color, 10%);
+		}
+	}
+	&.tertiary {
+		color: $text-color;
+		background-color: $gray-pale;
+		&:hover {
+			background-color: darken($gray-pale, 10%);
+		}
+	}
+	&.button-clear { // for buttons that are really just links, but need to behave like buttons
+		color: $text-color;
+		background-color: $trans;
+		&:hover {
+			background-color: $secondary-color;
+		}
+	}
+	&.disabled {
+		color: $text-color;
+		background-color: $gray-pale;
+		&:hover {
+			background-color: $gray-pale;
+			color: $text-color;
+		}
+	}
+}
+
+.button.dropdown {
+	background-color: transparent;
+	border: 3px solid $primary-color-med;
+	border-radius: rem-calc(8);
+}
+label {
+	&.h3 {
+		line-height: 1;
+		margin-top: 0.5em;
+		margin-bottom: 0.25em;
+	}
+}
+
+.panel-secondary {
+	@include panel(
+		// Sets the panel background color. Default: $panel-pg
+		$bg: $primary-color-dark,
+		// Sets the panel padding amount. Default: $panel-padding
+		$padding: rem-calc(30),
+		// Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
+		$adjust: true
+	);
+}
+
+.breadcrumbs{
+	& > * a {
+		// font-size: 0.8rem;
+		letter-spacing: 0.08em;
+	}
+}

@@ -1,0 +1,22 @@
+// Font Awesome CSS additions
+
+// List Icons
+// -------------------------
+
+.#{$fa-css-prefix}-ul {
+  padding-left: 0;
+  margin-left: $fa-li-width;
+  list-style-type: none;
+  > li { position: relative; }
+}
+.#{$fa-css-prefix}-li {
+  display: inline-block;
+  position: absolute;
+  left: -$fa-li-width;
+  width: $fa-li-width;
+  // top: (2em / 14); // what is this for? It seems to look better without this bit. 
+  text-align: center;
+  &.#{$fa-css-prefix}-lg {
+    left: -$fa-li-width + (4em / 14);
+  }
+}

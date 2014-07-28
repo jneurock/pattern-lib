@@ -1,0 +1,111 @@
+/* Reviews styling - modules/_reviews.scss */
+
+// main block
+.reviews-summary {
+	margin-bottom: rem-calc(20) !important;
+	// h4 {
+	// 	// font-size: $h4-font-size * 0.9;
+	// 	margin-bottom: rem-calc(5);
+	// }
+	p {
+		margin-bottom: rem-calc(5);
+	}
+	.toggle {
+		margin-top: rem-calc(10);
+	}
+}
+.review {
+	// @include group-box;
+	padding-bottom: rem-calc(40);
+	.meta {
+		margin-top: rem-calc(5);
+		margin-bottom: rem-calc(5);
+		color: lighten($gray-dark, 30%);
+
+	}
+	.date {
+		p & {
+			margin-bottom: 0;
+		}
+	}
+
+	.icon-ul {
+		margin-left: rem-calc(26);
+	}
+}
+.ratings-container, .rating-line, .ratings {
+	margin-bottom: 0;
+}
+.ratings-container {
+	position: relative;
+	width: 6em; // ugh, need it to fit-to-stars... this is a hack.
+}
+.rating-line {
+	margin-bottom: rem-calc(10);
+	.ratings-container {
+		float: left;
+	}
+}
+.ratings {
+	position: relative;
+	overflow: hidden;
+	.icon {
+		font: {
+			size: 1.2em;
+		}
+		color: $ratings-color; //adjust-color($ratings-color, $lightness: 10%, $saturation: -20%);
+	}
+	// these two sibling classes are for other styles of star blocks - just append the class onto .ratings.bg | .ratings.neutral. Orange ('active') is the star default.
+	&.bg { // this will sit below the star ratings above them
+		position: absolute;
+		.icon {
+			color: $gray-pale;
+		}
+	}
+	&.neutral {
+		.icon {
+			color: $gray-mid;
+		}
+	}
+}
+.ratings-count {
+	margin-left: 5px;
+	position: relative;
+	top: -0.1em;
+}
+.bar {
+	background-color: $gray-mid;
+}
+.mini-summary {
+	$row-height: 0.8rem;
+	.bar, .ratings, .icon {
+		height: $row-height;
+		font-size: $row-height;
+		margin-top: rem-calc(2);
+	}
+	.bar {
+		margin-left: rem-calc(5);
+	}
+
+}
+.leave-review { // this is the text and button for leaving reviews
+	margin-top: rem-calc(20);
+	.button {
+		// padding: rem-calc(7) rem-calc(10);
+		margin-right: rem-calc(10);
+	}
+}
+// .comment {
+
+// }
+.helpful {
+	padding-left: rem-calc(10);
+}
+#reviews-info {
+	margin-bottom: rem-calc(25);
+}
+#section-reviews {
+	.pagination {
+		padding-left: rem-calc(25);
+	}	
+}

@@ -1,0 +1,351 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  // I WISH WEBFONTS WORKED RIGHT!
+}
+
+a {
+	transition: all .15s ease;
+	font-weight: bold;
+}
+.full-width {
+	max-width: 100%;
+}
+.align-bottom { // for icons that need to align to the bottom of the text (like for arrows)
+  vertical-align: text-bottom;
+}
+.logo {
+	// margin: rem-calc(5);
+	float: left;
+	min-height: 40px
+	img {
+		width: 50%; // because, retina
+	}
+	@media #{small-only} and #{medium-only} {
+		text-align: center;
+	}
+}
+.centered { // I think Foundation has a class for this, see docs
+	text-align: center;
+}
+// off-canvas tweaks
+section {
+	&.right-small, &.left-small {
+		box-shadow: none;
+	}
+}
+// .feature {
+// 	margin-top: 2rem;
+// }
+.group { // for 'chunks' of features that are sorta widgetlike
+	@include group-box;
+	.info{
+		color: $gray-mid;
+	}
+}
+sup, sub { // dat decimal
+	line-height: 0;
+	vertical-align: baseline;
+    position: relative;
+}
+sup {
+	// top: -.33em;
+    // bottom: .5em;
+}
+
+sub {
+	bottom: -.33em;
+}
+hr {
+	&.divider {
+		border: 1px solid $gray-light;
+	}
+	&.logo-divider {
+		// border: 1px solid $gray-pale;
+		padding: rem-calc(30) 0 rem-calc(40) 0;
+		background: {
+			image: url('../img/divider-logo-gray.png');
+			size: 100%;
+			position: center;
+			repeat: no-repeat;
+		}
+	}
+}
+// sup  { vertical-align: text-top; } 
+// sub  { vertical-align: text-bottom; }
+.text-label {
+	&.small {
+		// @include spaced-out;
+		color: lighten($body-font-color, 40%);
+		font-size: rem-calc(13);
+	}
+}
+
+.regular-list, .invertelist, .attributes, .info-list {
+	.label {
+		// margin-right: rem-calc(5);
+		margin-right: rem-calc(5);
+	}
+}
+.attributes {
+	padding: 0;
+	margin-bottom: rem-calc(4);
+	.label {
+		@include spaced-out;
+		padding-bottom: rem-calc(3);
+		font-weight: bold;
+	}
+}
+.tertiary {
+	color: $gray-pale;
+}
+.label {
+	.secondary {
+		color: lighten($body-font-color, 20%);
+	}
+	&.tertiary {
+		background-color: $gray-pale;
+		color: $body-font-color;
+	}
+}
+.inverted {
+	background-color: $text-color;
+	color: $body-bg;
+}
+/*
+.badge { // for awards, etc.
+	padding: rem-calc(10) rem-calc(5);
+}
+*/
+
+
+.quality-measures-table {
+	table {
+		border: none;
+	}
+}
+// so, sorry for the extreme specificity; I welcome ideas on how to make these styles more general-purpose.
+body {
+	background-color: $body-bg;
+	// background-color: $gray-pale; //$primary-color;
+	&.index{
+		background-color: $gray-dark;
+	}
+	// &.home {
+	// 	#searchbox {
+	// 		border-radius: $global-radius * 2;
+	// 		@media #{medium-up} {
+	// 			border-radius: 0;
+	// 		}
+	// 	}
+	// }
+	&.profile { // just targeting the profile pages
+		.primary-decision {
+			.price {
+				font-size: $price-money-size * 1.5;
+				// sup {
+				// 	font: {
+				// 		size: $price-money-size;
+				// 		weight: bold;
+				// 	}
+				// }
+			}
+		}
+	}
+	.search {}
+	&.results {
+		.group {
+			margin-bottom: rem-calc(10);
+		}
+		// .price {
+		// 	font-size: $price-money-size;
+		// }
+		.info-list {
+			font-size: rem-calc(12);
+		}
+	}
+	&.content-full {
+		#searchbox {
+			@media #{medium-up} {
+				border-bottom-left-radius: $global-radius * 2;
+				border-bottom-right-radius: $global-radius * 2;
+			}
+		}
+	}
+}
+.last {
+	margin-bottom: rem-calc(20);
+}
+
+tel {
+	font-weight: bold;
+}
+
+.inset-content {
+	margin-top: rem-calc(10);
+	margin-left: rem-calc(20);
+}
+.tooltip{
+	max-width: rem-calc(200);
+}
+// h3 { // argh, this is not DRY, sorry folks. I want it to affect the .sidebar children
+// 	.icon {
+// 		padding-left: rem-calc(12);
+// 		padding-right: rem-calc(20);
+// 	}
+// }
+.username {
+	font: {
+		size: 0.8em;
+		weight: bold;
+		// family: $code-font-family;
+	}
+	letter-spacing: 0.05em;
+}
+.pagination li {
+	font: {
+		weight: bold;
+	}
+}
+.sub-nav dt.active a:hover, .sub-nav dd.active a:hover, .sub-nav li.active a:hover {
+	background: $primary-color;
+}
+
+.sidebar {
+	@media #{$medium-up} {
+		padding-left: rem-calc(20);
+	}
+}
+
+
+main {
+	// width: ;
+	margin-left: auto;
+	background-color: white;
+	margin-right: auto;
+	max-width: $row-width;
+	padding: 0;
+	// box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.6);
+}
+.tabs {
+	$border: 8px;
+	//background-color: $primary-color;
+	dd {
+		border-bottom: $border solid $secondary-color;
+		margin-right: $border;
+		// width: 33%;
+		&.active {
+			border-bottom: $border solid $primary-color;
+			&>a {
+				color: $text-color;
+			}
+		}
+		&>a {
+			font-weight: bold; // wherrr is that foundation setting for this? Surely...
+		}
+		.icon {
+			margin-right: rem-calc(10);
+		}
+	}
+}
+.tabs-content {
+	margin-top: rem-calc(25);
+	img.left { // for illustrations, photos etc.
+		padding-right: rem-calc(15);
+	}
+}
+.network {
+	color: $text-color; //darken($primary-color, 30%);
+	// font-size: rem-calc(18);
+	line-height: 1.1;
+	h3 {
+		margin-bottom: 0;
+	}
+	.icon {
+		font-size: rem-calc(20);
+		margin-right: rem-calc(5);
+	}
+	&.network-category { // for NI sub-categories
+		margin-left: rem-calc(26); // this offsets the icon; better way?
+		font: {
+			weight: normal;
+			size: 0.8em;
+		}
+	}
+	.plus-alt, .minus-alt{
+		color: $gray-mid;
+		font-size: rem-calc(12);
+		&:hover{
+			color: $gray-dark;
+		}
+	}
+	.network-info {
+		margin-top: rem-calc(10);
+		margin-bottom: rem-calc(10);
+	}
+	.primary-decision &{ // when .network is inside .primary-decision, more buffer
+		margin-top: rem-calc(15);
+	}
+}
+.info-list {
+	line-height: 1.2;
+	li {
+		margin-bottom: rem-calc(10);
+	}
+	a {
+		font-weight: bold;
+	}
+	.row {
+		margin-bottom: rem-calc(10) !important;
+	}
+	.small-11 {
+		padding-left: rem-calc(10) !important;
+	}
+	.icon {
+		// margin-right: rem-calc(5);
+		font:  {
+			size: rem-calc(16);
+		}
+		color: lighten($body-font-color, 40%);
+		margin-right: rem-calc(5);
+	}
+	.button {
+		margin-bottom: 0;
+	}
+}
+
+#wheres-price {
+	background-color: $primary-color-dark;
+	border: none;
+	h3, h4, p {
+		color: white;
+	}
+}
+
+#to-top {
+	@media #{small-only} {
+		text-align: center;
+	}
+}
+
+@media #{small-only} {
+	[class*="block-grid-"] > li {
+		width: 100%;
+	}
+}
+@media #{$medium-up} {
+	$gap: -50px;
+	.orbit-container  {
+		// margin-right: $gap;
+		// margin-left: $gap;
+	    overflow: visible !important;
+	    .orbit-prev  {
+		    margin-left: $gap;
+		}
+		.orbit-next  {
+		    margin-right: $gap;
+		}
+	}
+	.orbit-slides-container  {
+	    overflow: hidden !important;    
+	}
+}

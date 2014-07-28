@@ -1,0 +1,21 @@
+.artifact {
+  position: relative;
+  display: block;
+  height: 610px;
+  margin-bottom: 50px;
+}
+#suggest-results {
+  position: absolute;
+  top: 226px;
+  left: 126px;
+}
+.pac-item:hover, .pac-item.active, .suggest-list li a:hover, .suggest-list li a.active {
+  background-color: #f2f2f2
+}
+.pac-item, .suggest-list li a {
+  border-bottom: 1px solid #ddd;
+  color: #0d1926;
+  display: block;
+  font-weight: bold;
+  padding: 8px 6px;
+}

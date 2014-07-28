@@ -1,0 +1,152 @@
+// this was conflicting with other styles in other views; can't see what effect it has on this view.
+// h4.subheader {
+//   font-size: 2em;
+//   text-align: center;
+
+// }
+
+
+.qm-article {
+  
+  line-height: 1.4em;
+  
+  h3 {
+    
+    font-weight: 400;
+    font-size: rem-calc(24);
+    margin-top: rem-calc(10);
+    
+  }
+  
+  // .toggle-qm-details {
+    
+  //   margin-left: rem-calc(10);
+    
+  // }
+  
+} // qm-article
+
+
+.qm-section {
+  
+  h4 {
+    
+    text-align: center;
+    @extend .subheader;
+    margin: rem-calc(20) 0;
+    color: darken($gray-mid,10%);
+    
+  }
+  
+} // qm-section
+
+
+.qm-container {
+  
+  border: 1px solid $gray-mid;
+  padding: 0 rem-calc(15);
+  border-radius: $global-radius;
+  
+  .row {
+    
+    background: lighten($gray-pale, 13%);
+    padding: rem-calc(5) 0;
+    line-height: rem-calc(20);
+    
+    .columns {
+      
+      // THIS IS NOT IDEAL -- was told not to touch the html. 
+      
+      &:nth-child(1) {
+        font-size: rem-calc(16);
+        margin: rem-calc(7) 0;
+      }
+      
+      &:nth-child(5) {
+        
+      // saving for targeting -- percent
+              
+        small {
+          font-size: rem-calc(13);
+        }
+      
+      } // nth 5
+      
+      &:nth-child(7) {
+        
+        // percent
+      
+      }
+      
+    } // columns
+    
+    &:nth-child(odd) {
+    
+      background: none;
+    
+    }
+    
+    &.first {
+     
+      border-bottom: 1px solid $gray-mid;
+      //text-transform: uppercase;
+      font-size: rem-calc(14);
+      font-weight: 600;
+  
+    }
+    
+    .rating {
+      
+      &.rating-1{
+        color: $warning-color;
+        font-weight: 600;
+      }
+      &.rating-2{
+        color:inherit;
+      }
+      &.rating-3{
+        color: $success-color;
+        font-weight: 600;
+      }
+      
+    } // rating
+  
+  } // row
+
+} // qm-container
+
+
+.qr-container {
+  
+  margin-top: rem-calc(40);
+  
+  h4.subheader {
+    margin-bottom: rem-calc(40);
+  }
+  
+  .qr-icon {
+    
+    .qr-icon-container {
+      
+      img {
+        margin: 0 auto;
+        display: block;
+      }
+    
+    } // qr-icon-container
+    
+    p {
+      text-align: center;
+    }
+    
+  } // qr-icon
+
+  
+} // qr-container
+
+
+.large-0 {
+  //@extend .hide-for-large;
+  display: none;
+} // THIS IS DEFINED IN THE CURRENT STYLES -- probably not needed // just a fix
+

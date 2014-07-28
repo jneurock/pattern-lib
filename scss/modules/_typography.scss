@@ -1,0 +1,88 @@
+@import "../base/_settings.scss";
+/* presentational header classes. See Mailchimp's style guide for examples: https://ux.mailchimp.com/patterns/typography */
+
+// $h1-class-size: rem-calc(44);
+// $h2-class-size: rem-calc(37);
+// $h3-class-size: rem-calc(27);
+// $h4-class-size: rem-calc(23);
+// $h5-class-size: rem-calc(18);
+// $h6-class-size: 1rem;
+
+// iterate through list of 'golden' font sizes; generate slightly smaller h[n].subheader classes
+
+$subheader-scale: 0.8;
+// weights moved to settings.scss
+// weights					1			 2			  3			   4			5			 6
+// $header-size-list: rem-calc(44) rem-calc(37) rem-calc(27) rem-calc(23) rem-calc(16) rem-calc(12); // got a way to parse these inside rem-calc() I'd like One True Source for these values
+
+// h1, h2, h3, h4, h5, h6 {
+//     margin-bottom: 0;
+// }
+
+@each $h-size in $header-size-list {
+    $i: index($header-size-list, $h-size);
+    .h#{$i} {
+        font-size: nth($header-size-list, $i);
+        margin-bottom: 0.3em;
+        &.subheader {
+        	font-size: nth($header-size-list, $i) * $subheader-scale;
+        }
+    }
+}
+.subheader {
+	@include spaced-out;
+	color: darken($gray-mid, 10%);
+}
+.h4 {
+	color: lighten($gray-dark, 10%);
+}
+.h5, .h6 {
+	font-weight: bold;
+	color: $gray-dark;
+	// &.subheader {
+	// }
+}
+
+// Why do we have these, you ask? In case we need to choose a font with a different, numeric weight. I'm also trying out using more presentational classes for combos.
+.normal {
+	font-weight: $font-weight-normal;
+}
+.strong, .bold {
+	font-weight: $font-weight-bold;
+}
+// some generics for title?
+.addendum, .tabs-content {
+	& h2.subheader, & h3.subheader, & h4.subheader {
+		text-align: center;
+	}
+}
+h3 {
+	.icon{
+		padding-right: 0.3em;
+	}
+}
+.content {
+	.h2, .h3 {
+		margin-bottom: 0.5em;
+	}
+}
+// .content-page {
+// 	.h1 {
+// 		margin: 0 0 rem-calc(20) rem-calc(12);
+// 	}
+// }
+.content-secondary {
+	margin-top: rem-calc(-4);
+	opacity: 0.6;
+	transition: opacity .15s linear;
+	font: {
+		size: $paragraph-font-size * 0.8;
+		style: italic;
+	}
+	a {
+		font-weight: bold;
+	}
+	&:hover {
+		opacity: 1;
+	}
+}

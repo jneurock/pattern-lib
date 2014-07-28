@@ -1,0 +1,22 @@
+footer{
+	@include autocolor($primary-color-dark);
+	margin-top: rem-calc(30);
+	padding: rem-calc(30);
+	// background-color: $bgcolor;
+	h3{
+		@extend .spaced-out;
+		// color: $body-bg;
+		font:{
+			weight: normal;
+			size: $h3-font-size * 0.7;
+		}
+
+	}
+
+	@media #{$large-up} {// desktop only
+		.vcard{
+			margin-left: rem-calc(75);
+		}
+	}
+	// color: transparentize($body-font-color, 0.7);
+}

@@ -1,0 +1,37 @@
+.pricing { // pricing variables are being set in _settings.scss
+	padding-right: 0;
+	.h4 {
+		margin-bottom: 0;
+	}
+	.title {
+		@include spaced-out;
+	}
+}
+.pricing-table {
+	margin-bottom: rem-calc(10);
+	// .price {padding: 0;}
+	.title {
+		@include spaced-out;
+	}
+}
+.total-cost {
+	color: $gray-mid;
+	margin-bottom: rem-calc(5);
+	strike { // the price itself
+		color: lighten($text-color, 30%);
+	}
+}
+.price{
+	sup {
+		font: {
+			size: $price-money-size * .8;
+			weight: $font-weight-bold;
+		}
+	}
+
+}
+.price-specialty { // this is the little "for ____ only" by price
+	@media #{$large-up} {
+		padding: rem-calc(8) 0 0 rem-calc(10);
+	}
+}

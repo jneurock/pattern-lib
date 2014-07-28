@@ -1,0 +1,10 @@
+// offcanvas.scss
+.off-canvas-list {
+	padding: rem-calc(20);
+	h1, h2, h3, h4, ul, ol, li, p, form, input {
+		color: $page-color;
+	}
+}
+.tab-bar{
+	min-height: rem-calc(125);
+}

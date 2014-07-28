@@ -1,0 +1,133 @@
+/* Result card stuff. Currently focused on mobile only (5 Mar 2014). */
+
+.secondary .card-tinted {
+	padding: 0 !important;
+	background-color: $body-bg;
+	@extend .border-subtle;
+	// h3 {
+	// 	font: {
+	// 		weight: normal;
+	// 		size: $h3-font-size * 0.5;
+	// 	}
+	// }
+	.iconset {
+		color: lighten($text-color, 30%);
+	}
+}
+.iconset {
+	// color: $gray-mid;
+	.icon {
+		padding-right: rem-calc(5);
+		font-size: rem-calc(18);
+	}
+}
+.ratings{
+	color: adjust-color($gray-dark, $lightness: 30%, $saturation: -10%);
+	margin-bottom: rem-calc(8);
+}
+.card {
+	.avatar {
+		// background-color: rgba(0, 0, 0, 0.4);
+		// width: 5em;
+		height: 7em;
+		overflow: hidden;
+	}
+	.group {
+		margin-bottom: rem-calc(10);
+	}
+	.info {
+		padding: rem-calc(0 15 10 15);
+
+		ul li {
+			padding: 0;
+			margin: 0;
+			// color: $gray-mid;
+			font-size: rem-calc(16);
+		}
+		a {
+			// color: $gray-mid;
+			&:hover {
+				color: $anchor-font-color !important;
+			}
+		}
+		.icon {
+			margin-right: rem-calc(6);
+			font-size: rem-calc(18);
+		}
+		.h3, .h4 {line-height: 1.2;
+			margin-bottom: rem-calc(5);
+		}
+		// h3 {
+		// 	font-size: rem-calc(22);
+		// }
+		// h4 {
+		// 	font: {
+		// 		size: rem-calc(14);
+		// 		weight: normal;
+		// 	}
+		// 	margin-bottom: rem-calc(10);
+		// }
+		.ratings-container {
+			margin-bottom: rem-calc(10);
+		}
+		.ratings {
+			.icon {
+				padding: 0;
+				margin-right: 0;
+			}
+			.label {
+				margin-left: rem-calc(5);
+				vertical-align: top;
+				background-color: lighten($text-color, 60%);
+			}
+		}
+	}
+	.primary-decision {
+		ul .icon-ul {
+			margin-top: rem-calc(5);
+		}
+	}
+	.card-nav {
+		position: relative;
+		// .icon {
+		// 	position: absolute;
+		// 	left: -1rem;
+		// 	top: 1rem;
+		// 	font: {
+		// 		size: rem-calc(60);
+		// 	}
+		// }
+	}
+}
+.card-tinted  {
+	background-color: lighten($gray-pale, 5%);
+	padding: 20px !important;
+	border-radius: $global-radius;
+	ul {
+		margin-bottom: 1rem;
+	}
+}
+.card-result{
+	@extend .border-subtle;
+	margin-bottom: $column-gutter !important; // For the life of me, I cannot find where this is being overridden.
+	ul.icon-ul {
+		margin-left: 2em;
+		margin-top: rem-calc(10);
+		li{
+			margin-bottom: rem-calc(5);
+		// .icon-li {
+		// 	color: $gray-mid;
+		// }
+		}
+	}
+}
+.minimal .info{
+	.user {
+		font-size: 2em;
+	}
+}
+.network-indicator{
+
+}
+
+
