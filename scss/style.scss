@@ -41,6 +41,8 @@
   "../bower_components/foundation/scss/foundation/components/type",
   "../bower_components/foundation/scss/foundation/components/offcanvas",
   "../bower_components/foundation/scss/foundation/components/visibility",
+
+  "base/utility",
   "modules/mixins",
   "modules/color-classes",
   "modules/typography",
@@ -56,7 +58,7 @@
   "modules/quality",
   "modules/google-maps",
   "modules/content-page",
-  "modules/reviews";
-
-// Optional IE 8 Grid Styles
-// @import url("../bower_components/viking-base/css/foundation-ie8/ie8-grid-foundation-4.css");
+  "modules/reviews",
+// Pattern library-specific theming stuff
+  "modules/code",
+  "themes/github";

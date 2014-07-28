@@ -1,0 +1,23 @@
+$langList: "css", "handlebars", "html", "java", "javascript", "json", "md", "scss", "xml";
+
+.hljs {
+  padding: 1em 0.5em 2em !important;
+
+  &:before {  
+    background-color: #e6e6e6;
+    border-radius: 0.25rem 0 0;
+    bottom: 0;
+    color: #666;
+    opacity: 0.5;
+    padding: 0.25rem 0.75rem;
+    position: absolute;
+    right: 1rem;
+    text-transform: uppercase;
+  }
+}
+
+@each $lang in $langList {
+  .language-#{$lang}:before {
+    content: $lang;
+  }
+}
