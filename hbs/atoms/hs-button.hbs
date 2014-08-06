@@ -8,19 +8,19 @@
   <strong>Standard button</strong>
 </p>
 
-{{hs-button label="Standard"}}
+{{hs-button classNames="radius" label="Standard"}}
 
 <p>
   <strong>Secondary button</strong>
 </p>
 
-{{#hs-button classNames="secondary"}}Secondary{{/hs-button}}
+{{#hs-button classNames="secondary radius"}}Secondary{{/hs-button}}
 
 <p>
   <strong>Small alert button</strong>
 </p>
 
-{{#hs-button classNames="small alert"}}Delete{{/hs-button}}
+{{#hs-button classNames="small alert radius"}}Delete{{/hs-button}}
 
 <p>
   <strong>Small with rounded corners</strong>
@@ -38,4 +38,75 @@
   <strong>Large</strong>
 </p>
 
-{{#hs-button classNames="large"}}Large{{/hs-button}}
+{{#hs-button classNames="large radius"}}Large{{/hs-button}}
+
+<p>This page pulls in UI samples from designs across the pattern library. A work in progress!</p>
+<!-- Inline TOC. Needs an array in the jade file of titles and anchors; ex: - var sections = [{title: "Buttons", anchor: "buttons"}, {title: "Drop-downs", anchor: "dropdowns"}]-->
+<p>All the buttons in our design system have the <code>.radius</code> class added. The radius value is managed in <code>_settings.scss</code>.</p>
+<h4>Alternate classes</h4>
+<p>We may use <code>.rounded</code> in certain situations, when the shape needs to be distinct. The <code>.expand</code> class will make a button expand horizontally to fit its container.</p><br>
+<div class="row">
+<div class="row">
+  <div class="large-4 columns text-right">
+  	{{#hs-button classNames="success radius"}}.success.button{{/hs-button}}
+  <div class="large-8 columns">
+    <p>For the primary view <abbr title="Call to Action">CTA</abbr>. Use this when you want to make this button the most important interaction on the page.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="large-4 columns text-right">
+  	{{#hs-button classNames="radius"}}.button{{/hs-button}}
+  <div class="large-8 columns">
+    <p>Useful for basic calls-to-action.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="large-4 columns text-right">
+  	{{#hs-button classNames="secondary radius"}}.secondary.button{{/hs-button}}
+  <div class="large-8 columns">
+    <p>For those times when you need a button, but don't want to call too much attention to it. </p>
+  </div>
+</div>
+<div class="row">
+  <div class="large-4 columns text-right">
+  	{{#hs-button classNames="disabled radius"}}.disabled.button{{/hs-button}}
+  <div class="large-8 columns">
+    <p>This button has a "disabled" state.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="large-4 columns text-right">
+  	{{#hs-button classNames="alert radius"}}.alert.button{{/hs-button}}
+  <div class="large-8 columns">
+    <p>For severe warnings, choices that will have drastic impact, etc.  </p>
+    <hr>
+  </div>
+</div>
+<div class="row">
+  <div class="large-12 columns">
+    <h4>Button Hierarchy</h4>
+    <p>The size of buttons can also be controlled by the size class. <code>.tiny | .small | (default) | .large</code></p>
+  </div>
+</div>
+<div class="row">
+  <div class="large-4 columns text-right">
+  	{{#hs-button classNames="tiny radius"}}.tiny.button</a></div>{{/hs-button}}
+  <div class="large-8 columns"></div>
+</div>
+<div class="row">
+  <div class="large-4 columns text-right">
+  	{{#hs-button classNames="small radius"}}.small.button</a></div>{{/hs-button}}
+  <div class="large-8 columns"></div>
+</div>
+<div class="row">
+  <div class="large-4 columns text-right">
+  	{{#hs-button classNames="radius"}}.button</a></div>{{/hs-button}}
+  <div class="large-8 columns"></div>
+</div>
+<div class="row">
+  <div class="large-4 columns text-right">
+  	{{#hs-button classNames="large radius"}}.large.button</a></div>{{/hs-button}}
+  <div class="large-8 columns"></div>
+</div>
+</div>
+<hr class="logo-divider"><a href="typography.html" title="Type Patterns" class="button round">Typography Patterns</a>

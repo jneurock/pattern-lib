@@ -1,12 +1,14 @@
-<p>
+<div>
   <a {{action "toggleContent"}}>
     {{#unless App.hideContent}}
-      Hide content <span class="mono">&and;</span>
+      Hide code example
+      <span class="icon arrow-up2"></span>
     {{else}}
-      Show content <span class="mono">&or;</span>
+      Show code example
+      <span class="icon arrow-down2"></span>
     {{/unless}}
   </a>
-</p>
+</div>
 
 {{#unless App.hideContent}}
   <section class="row">
