@@ -1,10 +1,10 @@
 <div>
   <a {{action "toggleContent"}}>
     {{#unless App.hideContent}}
-      Hide code example
+      Hide Info
       <span class="icon arrow-up2"></span>
     {{else}}
-      Show code example
+      Show Info
       <span class="icon arrow-down2"></span>
     {{/unless}}
   </a>
@@ -12,8 +12,9 @@
 
 {{#unless App.hideContent}}
   <section class="row">
-    <div class="columns">
-      {{{content}}}
+    <div class="columns large-12">
+      <p>{{{model.desc}}}</p>
+      {{{model.content}}}
     </div>
   </section>
 {{/unless}}

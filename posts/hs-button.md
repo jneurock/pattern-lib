@@ -2,7 +2,6 @@
 title: Buttons
 category: atoms
 desc: Buttons indicate possible user actions, especially ones that invoke a new view.
-summary: Button elements.
 ---
 
 ```handlebars

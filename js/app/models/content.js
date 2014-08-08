@@ -14,7 +14,7 @@ App.Content.reopenClass({
 
         if (response && response.content) {
 
-          return response.content;
+          return response;
         }
       });
 
